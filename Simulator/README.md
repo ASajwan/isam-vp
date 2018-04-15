@@ -12,6 +12,7 @@ The odometry are inserted into the graph by graph.add(BetweenFactorPose2(lastPos
 The observation are inserted into the graph by graph.add(BearingRangeFactor2D(robPoseIndex, landmarkIndex, bearing, range, noiseModels))
 To solve the least square problem, by firstly define the Optimizer like LevenbergMarquardtOptimizer, then solve it by calling optimizer optimize function. After solving each batch, we will collect another batch of newFactors and initial values of nodes, so that we will 
 reinitialize the graphs and values correspondingly 
+There is a handon tutorial: https://borg.cc.gatech.edu/sites/edu.borg/files/downloads/gtsam.pdf
 
 Notes:
 In order to run the demo, please change the path to gtsam_toolbox appropriately.

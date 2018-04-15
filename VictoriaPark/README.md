@@ -1,4 +1,5 @@
 # isam-VicPark
+Decription:
 This dataset comes from http://www-personal.acfr.usyd.edu.au/nebot/victoria_park.htm
 The video are produced based on one-step update frequency and Constrained Nearnest Neighboor data association method
 Along with the vehicle moving, at each observation time, it will take at most 2-12 observations, with bearing and range. It will incorporate observations and odometry input and update the its positions and landmarks' positions after "incK" steps.
@@ -9,6 +10,7 @@ The odometry are inserted into the graph by graph.add(BetweenFactorPose2(lastPos
 The observation are inserted into the graph by graph.add(BearingRangeFactor2D(robPoseIndex, landmarkIndex, bearing, range, noiseModels))
 To solve the least square problem, by firstly define the Optimizer like LevenbergMarquardtOptimizer, then solve it by calling optimizer optimize function. After solving each batch, we will collect another batch of newFactors and initial values of nodes, so that we will 
 reinitialize the graphs and values correspondingly 
+There is a handon tutorial: https://borg.cc.gatech.edu/sites/edu.borg/files/downloads/gtsam.pdf
 
 Data Association methods:
 1.nearest neighboor without constraint. the cost will be defined as the Euclidean distance between the virtual predicted landmark based on the rob pose and measurement with the each actual ever seen landmarks. If the closest distance falls below the threshold, we will assign the closest landmark to that measurement. Otherwise, we will initiate a landmark for this measurement.
