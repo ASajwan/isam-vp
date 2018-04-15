@@ -1,7 +1,7 @@
 # isam-vp
 This repo. has implementation of iSAM2 on Victoria Park dataset in MATLAB using GTSAM library 
 
-requirement:
+Requirement:
 GTSAM Lib, the web page link, https://borg.cc.gatech.edu/
 please place the gtsam_toolbox under the MATLAB toolbox directory
 
