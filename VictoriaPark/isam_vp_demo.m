@@ -14,8 +14,9 @@
 clear
 nSteps = 5000;
 import gtsam.*
-addpath('C:\Program Files\MATLAB\R2016b\toolbox\gtsam_toolbox')
-addpath('.\vicpark')
+addpath('/home/baixu/Desktop/gtsam_toolbox')   % change the path to gtsam_toolbox appropriately
+addpath('./vicpark')
+addpath('./utils')
 makeVideo = 0;
 
 global AAr;

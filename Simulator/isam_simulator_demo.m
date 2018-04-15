@@ -135,9 +135,6 @@ for i=1:length(Data.noisefreeControl) % M
            moving_by_range = Pose2(range,0,0);
            pose = predictedPose.compose(shift_rotation).compose(moving_by_range);
            Lj = Point2(pose.x,pose.y);
-           pose
-           id
-           [field.MARKER_X_POS(id),field.MARKER_Y_POS(id)]
          %newFactors.add(PriorFactorPoint2(symbol('L',id),Lj,noiseModels.pointPrior));
         end
         initial.insert(symbol('L',id),Lj);

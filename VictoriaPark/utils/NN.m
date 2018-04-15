@@ -1,4 +1,4 @@
-function [index, exist]= NN(poseID,pose,z, graph, factor, LandMarkCount,predLandMarkBatch, threshold)
+function [index, exist]= NN(factor, LandMarkCount,predLandMarkBatch, threshold)
 %
 % Description: This function provides the index of the landmark
 % correspoding to a measurement based on nearest neighbour algorithm, given
