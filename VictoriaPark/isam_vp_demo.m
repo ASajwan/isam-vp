@@ -187,7 +187,7 @@ for i=1:nSteps
         % perform data association of choice
         else
         % Euclidean NN without constraints
-        %[BatchIndex,BatchExist] = NNBatch_woCons(predLandMarkBatch,wholeValues, LandMarkCount, threshold);
+        %[BatchIndex,BatchExist] = NN(wholeValues, LandMarkCount,predLandMarkBatch, threshold);
         
         % Mahalanobis NN without constraints
         [BatchIndex,BatchExist] = MLBatch_woCons(i, lastPose,measureMent(1:2,:), wholeGraph, wholeValues, LandMarkCount, threshold);

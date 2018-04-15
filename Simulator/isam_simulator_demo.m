@@ -8,6 +8,7 @@
 %% preliminaries
 clear
 import gtsam.*
+addpath('/home/baixu/Desktop/gtsam_toolbox')   % change the path to gtsam_toolbox appropriately
 addpath('./simulator');
 
 %% Initalize Params
@@ -56,7 +57,6 @@ if useRobust
   noiseModels.range = noiseModel.Robust(base,noiseModel.Isotropic.Sigma(1, 10));
 else
   noiseModels.range = noiseModel.Isotropic.Sigma(1, 10);
-  %noiseModels.range = noiseModel.Diagonal.Sigmas([10 deg2rad(10)]');
   noiseModels.observ = noiseModel.Diagonal.Sigmas([deg2rad(10), 10]');
 end
 
@@ -142,9 +142,7 @@ for i=1:length(Data.noisefreeControl) % M
         landmarkEverFaced.insert(symbol('L',id),Lj);
     end
     
-    %factor = RangeFactorPosePoint2(i, symbol('L',id), range, noiseModels.range);
     factor = BearingRangeFactor2D(i, symbol('L',id), Rot2(bearing), range, noiseModels.observ);
-    %factor   ange, noiseModels.observ);
     % Throw out obvious outliers based on current landmark estimates
     error=factor.unwhitenedError(landmarkEstimates);
 %     if k<=minK || abs(norm(error))<errorLimit
